@@ -1,0 +1,16 @@
+[Unit]
+Description=ID & IP Query Telegram Bot
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/opt/hermes/venv/bin/python3 /root/id_ip_bot.py
+WorkingDirectory=/root
+Restart=always
+RestartSec=10
+EnvironmentFile=/root/.hermes/.env
+
+[Install]
+WantedBy=multi-user.target

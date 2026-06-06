@@ -1,0 +1,14 @@
+[Unit]
+Description=IPIC Bot Admin Panel
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+ExecStart=/opt/hermes/venv/bin/python3 /root/id_ip_admin.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
